@@ -30,7 +30,7 @@ public class FluentValidationOptions<TOptions> : IValidateOptions<TOptions>
 
     public ValidateOptionsResult Validate(string? name, TOptions options)
     {
-        if (!string.IsNullOrWhiteSpace(_name) && _name.Equals(name))
+        if (!string.IsNullOrWhiteSpace(_name) && !_name.Equals(name))
             return ValidateOptionsResult.Skip;
 
         ArgumentNullException.ThrowIfNull(options);
