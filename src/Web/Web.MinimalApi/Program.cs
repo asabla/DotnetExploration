@@ -17,11 +17,11 @@ app.UseHttpsRedirection();
 
 // Setup swagger UI in development
 app.WebAppSwaggerSetup(
-    app.Environment.IsDevelopment(),
-    builder.Environment.ApplicationName);
+    isDevelopment: app.Environment.IsDevelopment(),
+    applicationName: builder.Environment.ApplicationName);
 
 // Map all endpoints
 app.MapTodoV1();
-app.MapTodoV2();
+app.MapTodoV2(app.Configuration);
 
 app.Run();
