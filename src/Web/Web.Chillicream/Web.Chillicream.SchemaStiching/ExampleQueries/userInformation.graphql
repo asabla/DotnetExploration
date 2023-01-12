@@ -1,0 +1,7 @@
+query userInformationQuery {
+  user(login: "asabla") {
+    id
+    name
+    avatarUrl
+  }
+}
